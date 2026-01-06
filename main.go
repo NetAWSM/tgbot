@@ -3,6 +3,11 @@ package main
 import (
 	"flag" // флаги нужны для определения параметров запуска приложения ./myapp -port=8080 -debug=true
 	"log"
+	"tgbot/clients/telegram"
+)
+
+const (
+	tgBotHost = "api.telegram.org"
 )
 
 func main() {
@@ -11,8 +16,7 @@ func main() {
 
 	// token = flags.Get(token)
 
-	// tgClient = telegram.New(token)
-
+	tgClient = telegram.New(tgBotHost, mustToken())
 	//fetcher = fetcher.New()
 
 	//processor = processor.New()
